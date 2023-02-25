@@ -6,13 +6,13 @@ export const comment = defineType({
   type: "document",
   fields: [
     defineField({
-        title:'postedBy',
-        name:'PostedBy',
+        title:'PostedBy',
+        name:'postedBy',
         type:'postedBy',
     }),
     defineField({
-        title:'comment',
-        name:'Comment',
+        title:'Comment',
+        name:'comment',
         type:'string'
     })
   ]

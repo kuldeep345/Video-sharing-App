@@ -1,34 +1,34 @@
 import {defineType, defineField} from 'sanity'
 
 export const Post = defineType({
-  title: "post",
-  name: "Post",
+  title: "Post",
+  name: "post",
   type: "document",
   fields: [
     defineField({
-        title:'caption',
-        name:'Caption',
+        name:'caption',
+        title:'Caption',
         type:'string'
     }),
     defineField({
-        title:'video',
-        name:'Video',
+        name:'video',
+        title:'Video',
         type:'file',
     }),
     defineField({
-        title:'userId',
-        name:'UserId',
+        name:'userId',
+        title:'UserId',
         type:'string',
     }),
     defineField({
-        title:'postedBy',
-        name:'PostedBy',
+        name:'postedBy',
+        title:'PostedBy',
         type:'postedBy',
 
     }),
     defineField({
-        title:'Likes',
         name:'likes',
+        title:'Likes',
         type:'array',
         of:[
             {
