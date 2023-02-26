@@ -23,7 +23,7 @@ const Home = ({videos}:Props) => {
 }
 
 export async function getServerSideProps(){
-  const {data} = await axios.get(`http://localhost:3000/api/post`)
+  const {data} = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`)
  
   return {
     props:{
