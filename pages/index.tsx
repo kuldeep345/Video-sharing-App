@@ -29,10 +29,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   let response = null;
   
   if(topic){
-    response = await axios.get(`/api/discover/${topic}`)
+    response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/discover/${topic}`)
   }
   else{
-    response = await axios.get(`/api/post`)
+    response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`)
   }
  
   return {
