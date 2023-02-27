@@ -10,7 +10,7 @@ type Props = {
 
 const List:NextPage<Props> = ({items, mt})=>{
   return <div className={`flex flex-wrap gap-2 ${mt && 'mt-5'}`}>
-  {footerList1.map((item) => (
+  {items.map((item) => (
     <p key={item} className='text-gray-400 text-sm hover:underline cursor-pointer'>
         {item}
     </p>
@@ -18,7 +18,7 @@ const List:NextPage<Props> = ({items, mt})=>{
 </div>
 }
 
-const Footer:NextPage<Props> = () => {
+const Footer = () => {
   return (
     <div className='mt-6 hidden xl:block'>
         <List items={footerList1} mt={false}/>
