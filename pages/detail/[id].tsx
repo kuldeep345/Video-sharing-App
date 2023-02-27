@@ -47,7 +47,7 @@ const Detail:NextPage<Props> = ({postDetails}) => {
 
      const handleLike = async(like:boolean)=>{
         if(userProfile){
-            const {data} = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL}/api/like` , {
+            const {data} = await axios.put(`/api/like` , {
                 userId:userProfile._id,
                 postId:post._id,
                 like
@@ -61,7 +61,7 @@ const Detail:NextPage<Props> = ({postDetails}) => {
         if(userProfile && comment) {
             setIsPostingComment(true)
 
-            const {data} = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${post._id}`, {
+            const {data} = await axios.put(`/api/post/${post._id}`, {
                 userId:userProfile._id,
                 comment
             });
@@ -173,7 +173,7 @@ const Detail:NextPage<Props> = ({postDetails}) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const {data} = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${context.query.id}`)
+    const {data} = await axios.get(`/api/post/${context.query.id}`)
    
     return {
       props: {
