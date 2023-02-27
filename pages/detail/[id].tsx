@@ -77,7 +77,7 @@ const Detail:NextPage<Props> = ({postDetails}) => {
 
   return (
     <div className='flex w-full absolute left-0 top-0 bg-white flex-col md:flex-row h-[103vh] overflow-y-scroll'>
-      <div className='w-fit h-auto relative flex-2 lg:w-9/12 flex justify-center items-center bg-black'>
+      <div className='h-auto relative flex-2 lg:w-9/12 flex justify-center items-center bg-black'>
            <div className='absolute top-6 left-2 lg:left-6 flex gap-6 z-50'>
              <p className='cursor-pointer' onClick={()=>router.back()}>
                 <MdOutlineCancel className='text-white text-[35px]'/>
