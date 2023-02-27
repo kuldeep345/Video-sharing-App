@@ -38,8 +38,6 @@ const Detail:NextPage<Props> = ({postDetails}) => {
         }
      }
 
-     console.log(post)
-
      useEffect(()=> {
         if(post && VideoRef?.current){
             VideoRef.current.muted = isVideoMuted
@@ -160,7 +158,7 @@ const Detail:NextPage<Props> = ({postDetails}) => {
                         />
                     )}
                  </div>   
-                 <Comments
+               <Comments
                     comment={comment}
                     setComment={setComment}
                     addComment={addComment}

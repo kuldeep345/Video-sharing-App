@@ -68,7 +68,7 @@ const Upload = ()=>{
         }
 
     return (    
-        <div className="flex w-full h-full absolute left-0 top-[60px] mb-10 pt-10 lg:pt-20 bg-[#F8F8F8] justify-center">
+        <div className="flex w-full h-full absolute left-0 top-[60px] mb-10 py-10 lg:pt-20 bg-[#F8F8F8] justify-center overflow-y-scroll">
             <div className="bg-white rounded-lg xl:h-[80vh] w-[60%] flex gap-6 flex-wrap justify-between items-center p-14 pt-6">
                 <div>
                     <div>
@@ -135,7 +135,7 @@ const Upload = ()=>{
                     }
                     </div>
                 </div>
-                <div className="flex flex-col gap-3 pb-10">
+                <div className="flex flex-col gap-3 pb-36 md:pb-10">
                         <label className="text-md font-medium">
                             Caption
                         </label>

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { Video } from '../types'
 import VideoCard from '../components/VideoCard';
 import NoResults from '../components/NoResults';
+import { GetServerSideProps } from 'next';
 
 type Props = {
   videos:Video[];
@@ -22,12 +23,21 @@ const Home = ({videos}:Props) => {
   )
 }
 
-export async function getServerSideProps(){
-  const {data} = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`)
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const topic = context.query.topic
+
+  let response = null;
+  
+  if(topic){
+    response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/discover/${topic}`)
+  }
+  else{
+    response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post`)
+  }
  
   return {
     props:{
-      videos:data
+      videos:response.data
     }
   }
 }

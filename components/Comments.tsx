@@ -29,11 +29,11 @@ const Comments = ({ comment, addComment, comments, isPostingComment, setComment 
   return (
     <div className='border-t-2 border-gray-200 pt-4 px-10 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]'>
       <div className='overflow-scroll h-[250px] lg:h-[400px]'>
-        {comments.length > 0 ? (
+        {comments ? (
           comments.map((item, idx) => (
-            <>
+            <div key={idx}>
               {allUsers.map((user: User) => (
-                user._id === item.postedBy._id && (
+                user._id === (item.postedBy._ref || item.postedBy._id)&& (
                   <div className='p-2 items-center' key={idx}>
                     <Link href={`/profile/${user._id}`}>
                       <div className='flex gap-3 hover:bg-gray-100 p-2 cursor-pointer font-semibold rounded'>
@@ -65,7 +65,7 @@ const Comments = ({ comment, addComment, comments, isPostingComment, setComment 
                   </div>
                 )
               ))}
-            </>
+            </div>
           ))
         ) : (
           <NoResults text='No comments yet!' />

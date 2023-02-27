@@ -1,3 +1,35 @@
+export interface Post {
+    caption: string;
+    comments: {
+        _key: string;
+        comment: string;
+        postedBy: {
+            image?: string;
+            username?: string;
+            _id:string;
+            _ref?:string;
+        };
+    }[];
+    likes: {
+        _key: string;
+        _ref: string;
+        _type: string;
+    }[];
+    postedBy: {
+        _id: string;
+        image: string;
+        userName: string
+    };
+    userId: string,
+    video: {
+        asset: {
+            url: string;
+            _id: string;
+        }
+    };
+    _id: string
+}
+
 export interface Video {
     caption: string;
     comments: {

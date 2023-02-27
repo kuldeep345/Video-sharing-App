@@ -32,6 +32,7 @@ const Profile:NextPage<Props> = ({profile:{user , userLikedVideos , userVideos}}
       }
     }, [showUserVideos ,userLikedVideos , userVideos])
     
+    console.log(videoList)
 
   return (
     <div className='w-full'>
