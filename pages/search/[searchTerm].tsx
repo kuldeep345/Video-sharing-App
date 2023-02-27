@@ -79,7 +79,7 @@ const SearchTerm: NextPage<Props> = ({ videos }) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const { data } = await axios.get(`/api/search/${context.query.searchTerm}`)
+    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/search/${context.query.searchTerm}`)
 
     return {
         props: {

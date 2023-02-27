@@ -60,7 +60,7 @@ const Upload = ()=>{
                     },
                     topic:category
                 }
-                await axios.post(`/api/post` , document)
+                await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post` , document)
                 router.push('/')
             }
 

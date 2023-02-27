@@ -173,7 +173,7 @@ const Detail:NextPage<Props> = ({postDetails}) => {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const {data} = await axios.get(`/api/post/${context.query.id}`)
+    const {data} = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${context.query.id}`)
    
     return {
       props: {

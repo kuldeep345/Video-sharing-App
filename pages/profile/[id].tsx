@@ -75,7 +75,7 @@ const Profile:NextPage<Props> = ({profile:{user , userLikedVideos , userVideos}}
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
-    const {data} = await axios.get(`/api/profile/${context.query.id}`)
+    const {data} = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile/${context.query.id}`)
    
     return {
       props: {
