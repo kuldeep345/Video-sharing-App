@@ -23,7 +23,6 @@ export default async function handler(req:NextApiRequest , res:NextApiResponse){
                 postedBy:{_type:'postedBy' , _ref:userId}
             }
         ]).commit()
-
         res.status(200).json(data)
     }
 }

@@ -4,9 +4,8 @@ export interface Video {
         _key: string;
         comment: string;
         postedBy: {
+            _ref: string;
             _id: string;
-            image: string;
-            userName: string;
         };
     }[];
     likes: {
